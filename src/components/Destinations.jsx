@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { popularDestinations } from '../data/mockData';
 import '../styles/Destinations.css';
