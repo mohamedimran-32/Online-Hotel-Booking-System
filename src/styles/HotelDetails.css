@@ -1,169 +1,163 @@
 .hotel-details-page {
-    padding-top: 2rem;
-    padding-bottom: 4rem;
+  padding: 2rem 0;
 }
 
 .image-gallery {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .main-image {
-    height: 400px;
-    width: 100%;
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 1rem;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .main-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .thumbnail-list {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
 }
 
 .thumbnail-list img {
-    width: 100px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s, border 0.2s;
-    border: 2px solid transparent;
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 
 .thumbnail-list img.active,
 .thumbnail-list img:hover {
-    opacity: 1;
-    border-color: var(--primary-color);
+  opacity: 1;
 }
 
-.details-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
+.details-content {
+  display: grid;
+  gap: 2rem;
 }
 
-.header-info {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1rem;
+.header-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
 }
 
 .location {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.rating .badge {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    margin-right: 0.5rem;
-    font-weight: bold;
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.description,
-.amenities-section,
-.map-section,
-.rooms-section {
-    margin-bottom: 2rem;
+.badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.description h3,
+.amenities-section h3,
+.map-section h3,
+.rooms-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
 }
 
 .amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
 }
 
 .amenity-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background-color: var(--card-bg);
-    padding: 0.5rem;
-    border-radius: var(--radius);
-    font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: #f3f4f6;
+  border-radius: var(--radius);
+}
+
+.map-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .map-placeholder {
-    background-color: #eee;
-    height: 300px;
-    border-radius: var(--radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    font-weight: bold;
-    border: 1px solid var(--border-color);
+  height: 450px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
 }
 
 .rooms-grid {
-    display: grid;
-    gap: 1.5rem;
+  display: grid;
+  gap: 1rem;
 }
 
 .room-card {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .room-card h4 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--text-color);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
 }
 
 .room-price-action {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .book-btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-    transition: background-color 0.2s;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
 }
 
 .book-btn:hover {
-    background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-    .header-info h1 {
-        font-size: 2rem;
-    }
-
-    .room-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .room-price-action {
-        width: 100%;
-        justify-content: space-between;
-    }
+  background: #1d4ed8;
 }
