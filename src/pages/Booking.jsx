@@ -36,6 +36,18 @@ const Booking = () => {
         e.preventDefault();
         setIsProcessing(true);
 
+        // Validate form data
+        if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
+            alert('Please fill in all guest details');
+            setIsProcessing(false);
+            return;
+        }
+        if (!formData.cardNumber || !formData.expiryDate || !formData.cvv) {
+            alert('Please fill in all payment details');
+            setIsProcessing(false);
+            return;
+        }
+        
         // Simulate API call
         setTimeout(() => {
             setIsProcessing(false);
