@@ -11,6 +11,14 @@ const Hero = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
+        if (!checkIn || !checkOut) {
+            alert('Please select check-in and check-out dates');
+            return;
+        }
+        if (new Date(checkOut) <= new Date(checkIn)) {
+            alert('Check-out date must be after check-in date');
+            return;
+        }
         if (destination.trim()) {
             navigate(`/hotels?city=${encodeURIComponent(destination)}`);
         } else {
@@ -32,7 +40,6 @@ const Hero = () => {
                             placeholder="City or Hotel"
                             value={destination}
                             onChange={(e) => setDestination(e.target.value)}
-                            required
                         />
                     </div>
 
@@ -42,6 +49,7 @@ const Hero = () => {
                             type="date"
                             value={checkIn}
                             onChange={(e) => setCheckIn(e.target.value)}
+                            min={new Date().toISOString().split('T')[0]}
                             required
                         />
                     </div>
@@ -52,6 +60,7 @@ const Hero = () => {
                             type="date"
                             value={checkOut}
                             onChange={(e) => setCheckOut(e.target.value)}
+                            min={checkIn || new Date().toISOString().split('T')[0]}
                             required
                         />
                     </div>
@@ -61,13 +70,16 @@ const Hero = () => {
                         <input
                             type="number"
                             min="1"
+                            max="10"
                             value={guests}
-                            onChange={(e) => setGuests(e.target.value)}
+                            onChange={(e) => setGuests(parseInt(e.target.value))}
                             required
                         />
                     </div>
 
-                    <button type="submit" className="search-btn">Search</button>
+                    <button type="submit" className="search-btn">
+                        Search Hotels
+                    </button>
                 </form>
             </div>
         </div>
